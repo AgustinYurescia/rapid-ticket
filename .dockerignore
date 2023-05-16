@@ -1,0 +1,14 @@
+.bin
+.git
+.gitignore
+.bundleignore
+.bundle
+.byebug_history
+tmp/*
+log/*
+public/assets/*
+storage/*
+public/packs/*
+public/packs-test/
+coverage/
+.env
