@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class Ubication < ApplicationRecord
-  belongs_to :section
-  belongs_to :show
-  belongs_to :ticket
+class Location < ApplicationRecord
+  belongs_to :place
+  has_many :section_locations
+  has_many :sections, through: :section_locations
 end

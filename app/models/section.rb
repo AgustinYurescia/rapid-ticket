@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class Section < ApplicationRecord
-  has_many :locations
+  belongs_to :show
+  has_many :section_locations
+  has_many :locations, through: :section_locations
 end

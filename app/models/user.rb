@@ -2,4 +2,5 @@
 
 class User < ApplicationRecord
   belongs_to :user_role
+  has_many :reservations
 end
