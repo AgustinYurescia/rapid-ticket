@@ -10,7 +10,7 @@ class Reservation < ApplicationRecord
   private
     def update_sections_availability
       section_locations.includes(:section).each do | section_location |
-        section_location.section.available_locations -= 1
+        section_location.section.available_locations_count -= 1
         section_location.section.save
       end
     end
