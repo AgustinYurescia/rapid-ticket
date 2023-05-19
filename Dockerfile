@@ -2,7 +2,7 @@ FROM ruby:3.0.0-alpine
 
 WORKDIR /app
 
-RUN apk update -qq && apk add --update build-base postgresql-dev imagemagick git vim curl bash tzdata
+RUN apk update -qq && apk add --update build-base postgresql-dev imagemagick git nano curl bash tzdata
 
 ENV TZ=America/Argentina/Buenos_Aires
 
