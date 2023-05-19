@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_18_001534) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_18_201645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_001534) do
     t.datetime "updated_at", null: false
     t.integer "available_locations_count"
     t.boolean "without_numeration"
+    t.index ["price"], name: "index_sections_on_price"
     t.index ["show_id"], name: "index_sections_on_show_id"
   end
 
@@ -74,6 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_001534) do
     t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["day_and_hour"], name: "index_shows_on_day_and_hour"
     t.index ["place_id"], name: "index_shows_on_place_id"
   end
 
