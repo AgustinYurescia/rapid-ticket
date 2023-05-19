@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_201645) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "available_locations_count"
-    t.boolean "without_numeration"
+    t.boolean "without_numeration", default: false
     t.index ["price"], name: "index_sections_on_price"
     t.index ["show_id"], name: "index_sections_on_show_id"
   end

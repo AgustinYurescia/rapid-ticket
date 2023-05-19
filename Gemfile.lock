@@ -78,6 +78,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    ffaker (2.21.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hiredis (0.6.3)
@@ -184,6 +185,7 @@ DEPENDENCIES
   bootsnap
   byebug
   debug
+  ffaker
   hiredis
   kaminari
   pg (~> 1.1)
