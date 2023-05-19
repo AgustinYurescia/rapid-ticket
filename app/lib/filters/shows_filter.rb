@@ -17,7 +17,7 @@ module Filters
           if @filter_params[:min_price].present?
             @data = @data.joins_sections.where('sections.price >= ?', @filter_params[:min_price]).distinct
           end
-          if max_price.present?
+          if @filter_params[:max_price].present?
             @data = @data.joins_sections.where('sections.price <= ?', @filter_params[:max_price]).distinct
           end
         end
