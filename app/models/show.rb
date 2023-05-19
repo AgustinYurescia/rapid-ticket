@@ -28,6 +28,7 @@ class Show < ApplicationRecord
         available_section_locations = section.section_locations.includes(:location).where('section_locations.reservation_id IS NULL')
         available_section_locations.each do | section_location |
           location_data = {
+            show_section_id: section_location.id,
             location_number: section_location.location.location_number,
             location_row: section_location.location.location_row,
             price: section.price
