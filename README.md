@@ -17,3 +17,11 @@ Para montar el modo development de la aplicación y poder usarla localmente para
   - `docker-compose run --rm app bundle exec rake db:seed`
 - Una vez realizado lo anterior, podemos hacer un start de nuestra aplicación en un contenedor docker con el siguiente comando: `docker-compose up -d`.
 - El dominio del sitio para probar localmente será: **http://localhost:3000/**
+
+## Postam collection para probar
+
+- [Link al archivo](https://github.com/AgustinYurescia/rapid-ticket/blob/master/Rapid%20Ticket.postman_collection.json)
+
+## Modelo de datos
+
+
