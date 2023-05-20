@@ -30,16 +30,16 @@ class ShowsController < ApplicationController
   end
 
   def get_available_locations_for_section
-    Rails.cache.fetch(available_locations_cache_key) do
-      show = Show.find_by(id: @permitted_params[:show_id])
-      unless show.nil?
-        show_section_available_locations_data = show.available_locations_for_section(@permitted_params[:section_id])
-        response = { available_locations: show_section_available_locations_data }
-      else
-        response = { errors: 'Show does not exist' }
+    show = Show.find_by(id: @permitted_params[:show_id])
+    unless show.nil?
+      show_section_available_locations_data = Rails.cache.fetch(available_locations_cache_key) do
+        show.available_locations_for_section(@permitted_params[:section_id])
       end
-      render json: response
+      response = { available_locations: show_section_available_locations_data }
+    else
+      response = { errors: 'Show does not exist' }
     end
+    render json: response
   end
 
   private
@@ -73,12 +73,13 @@ class ShowsController < ApplicationController
 
     def available_locations_cache_key
       show_id = @permitted_params[:show_id]
+      section_id = @permitted_params[:section_id]
       show = Show.find_by(id: show_id)
       show_sections_max_updated_at = show.sections.maximum(:updated_at)
       available_section_locations_quantity = SectionLocation.where('
         section_locations.section_id = ? AND section_locations.reservation_id IS NULL', @permitted_params[:section_id]
       ).count
 
-      "available_locations/show_#{show_id}/#{show_sections_max_updated_at}/#{available_section_locations_quantity}"
+      "available_locations/show_#{show_id}/section_#{section_id}/#{show_sections_max_updated_at}/#{available_section_locations_quantity}"
     end
 end
