@@ -13,7 +13,6 @@ seeds =  [
   'locations',
   'shows',
   'sections',
-  'section_locations',
 ]
 
 seeds.each do |seed|

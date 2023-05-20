@@ -1,7 +1,7 @@
 puts "\nLoading shows\n"
 
 show_types = ['theatre', 'music', 'circus']
-100.times do
+50.times do
   place = Place.all.sample
   Show.create(
     day_and_hour: FFaker::Time.between(DateTime.now, DateTime.now + 90),

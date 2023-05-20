@@ -11,7 +11,7 @@ Show.all.each do |show|
       section = Section.create!(
         price: FFaker::Number.decimal * 1000,
         currency: 'ARS',
-        name: FFaker::Lorem.words(1),
+        name: FFaker::Lorem.words,
         show_id: show.id,
         without_numeration: boolean_array.sample,
         available_locations_count: locations.size

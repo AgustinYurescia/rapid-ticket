@@ -8,6 +8,10 @@ class ReservationsController < ApplicationController
     reservation_user = User.find_by(id: @permitted_params[:user_id])
     return render_error('The user does not exist') if reservation_user.nil?
 
+    required_section = Section.find_by(id: @permitted_params[:section_id])
+    return render_error('Section does not exist') if required_section.nil?
+    return render_error('Section with numerated places') if !required_section.without_numeration && @permitted_params[:section_location_ids].nil?
+
     if @permitted_params[:section_location_ids].nil? && (@permitted_params[:section_id].nil? || @permitted_params[:quantity].nil?)
       return render_error('You must choice locations or section and quantity')
     end
