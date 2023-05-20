@@ -24,4 +24,4 @@ Para montar el modo development de la aplicación y poder usarla localmente para
 
 ## Modelo de datos
 
-![imagen](https://github.com/AgustinYurescia/rapid-ticket/assets/48600998/953c9199-1924-4350-8cfe-35287b99211b)
+![imagen](https://github.com/AgustinYurescia/rapid-ticket/assets/48600998/21217a42-311c-41c5-aa4f-af6f7e25efa2)
